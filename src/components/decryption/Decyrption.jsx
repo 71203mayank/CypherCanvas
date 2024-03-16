@@ -1,14 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import './Cipher.css'
-import GridOne from '../gridOne/GridOne';
-
+import React, {useEffect, useState} from 'react'
+import GridTwo from '../gridTwo/GridTwo';
 import PFCipher from '../pfc';
 
+export default function Decyrption() {
+    // const str = "hpbkaqsvqvoteuikabonkgiglhpbsekuniincoqobrhkzmgugpnlunvbpuoghpqmqm"
+    const str = "hpbkaq"
 
-export default function Cipher(props) {
-    
-    // const str = "un"
-    const str = "each who own since want here again keep person right develop new run greath"
     // const str = "coding niggas"
     const keyword = "playfair";
     // const keyword = 'codeinit'
@@ -75,7 +72,7 @@ export default function Cipher(props) {
                 }
             });
 
-        }, 500); // Increment i and j every 5 seconds
+        }, 2000); // Increment i and j every 5 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -84,9 +81,9 @@ export default function Cipher(props) {
         if(one === '' || two === '')
             return;
 
-        setOneSol(cipher.enCords(one.toUpperCase() + two.toUpperCase()).text[0].toLowerCase())
-        setTwoSol(cipher.enCords(one.toUpperCase() + two.toUpperCase()).text[1].toLowerCase())
-        setOutput(out => out.concat(cipher.enCords(one.toUpperCase() + two.toUpperCase()).text.toLowerCase()))
+        setOneSol(cipher.deCords(one.toUpperCase() + two.toUpperCase()).text[0].toLowerCase())
+        setTwoSol(cipher.deCords(one.toUpperCase() + two.toUpperCase()).text[1].toLowerCase())
+        setOutput(out => out.concat(cipher.deCords(one.toUpperCase() + two.toUpperCase()).text.toLowerCase()))
     }, [one, two])
 
 
@@ -101,7 +98,7 @@ export default function Cipher(props) {
                 <span style={{color:'#AAAEB3'}}>{input.substring(j)}</span>
             </div>
             <div className='cipher-animation-container'>
-                <GridOne
+                <GridTwo
                     keyword = {keyword}
                     first = {one}
                     second = {two}
@@ -121,9 +118,9 @@ export default function Cipher(props) {
                 </div>
             </div>
             <div className='cipher-output-container text-container' style={{color:'#D2DFF4'}}>{output}</div>
+            <div className='cipher-output-container text-container' style={{color:'#D2DFF4'}}>{output.replaceAll('x', ' ')}</div>
+
         </div>
     </div>
     )
 }
-
-

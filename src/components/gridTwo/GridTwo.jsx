@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react'
-import './GridOne.css'
+import React, {useState, useEffect} from 'react'
 import PFCipher from '../pfc'
 
-export default function GridOne(props) {
+export default function GridTwo(props) {
     const cipher = new PFCipher(props.keyword);
 
     const [children, setChildren] = useState([]);
@@ -21,7 +20,7 @@ export default function GridOne(props) {
             return;
         }
 
-        const { inp, out, text } = cipher.enCords(props.first.toUpperCase() + props.second.toUpperCase())
+        const { inp, out, text } = cipher.deCords(props.first.toUpperCase() + props.second.toUpperCase())
         // get the coordinates of the 2nd letter
 
         // let topLeft = [ Math.min(inp[0][0], inp[1][0]), Math.min(inp[0][1], inp[1][1]) ];

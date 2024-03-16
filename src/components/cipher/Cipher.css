@@ -5,6 +5,7 @@
     display: flex;
     align-items:center;
     background-image: url('./../../../public/assets/paper_background.svg');
+    background-repeat:no-repeat ;
 }
 
 .cipher-container{
@@ -54,6 +55,6 @@
     
 }
 
-.output-span-one{
-    
-}
+/* .output-span-one{
+
+} */

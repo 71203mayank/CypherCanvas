@@ -1,0 +1,29 @@
+.navbar{
+    height:100px;
+    width:100vw;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container{
+    height:75px;
+    width: 250px;
+    /* border:1px solid white; */
+    margin-left: 50px;
+    /* background-color: antiquewhite; */
+
+}
+.nav-buttons{
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-right: 50px;
+}
+.nav-button:hover{
+    color:#F2C17B;
+    cursor: pointer;
+}

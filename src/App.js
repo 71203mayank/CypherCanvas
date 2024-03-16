@@ -1,8 +1,10 @@
 import './App.css';
-
+import Hero from './components/hero/Hero';
 function App() {
   return (
-    <div className="App">
+    <div className="bg-midnight min-w-screen min-h-screen">
+      <Hero/> 
+      
     </div>
   );
 }

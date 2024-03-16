@@ -28,7 +28,7 @@ const Hero = () => {
   return (
 
     <div className='hero'>
-    <NavBar/>
+    {/* <NavBar/> */}
     <div className='hero-container'>
         <div className='hero-text'>
             <WelcomeBox/>

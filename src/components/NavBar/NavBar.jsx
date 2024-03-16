@@ -5,7 +5,7 @@ import OutButton from '../baseButton/OutButton';
 
 const NavBar = () => {
 return (
-    <nav className='navbar'>
+    <nav className='navbar sticky top-0 z-50'>
       <div className='logo-container'>
         <img src='./assets/logo.svg'></img>
       </div>

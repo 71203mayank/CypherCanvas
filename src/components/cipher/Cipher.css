@@ -1,0 +1,59 @@
+.cipher{
+    height:100vh;
+    /* margin-inline: 50px; */
+    /* background-color: antiquewhite; */
+    display: flex;
+    align-items:center;
+    background-image: url('./../../../public/assets/paper_background.svg');
+}
+
+.cipher-container{
+    height: 90%;
+    width: 100%;
+    margin-inline: 100px;
+
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-container{
+    height:50px;
+    width: 100%;
+    /* border: 1px solid black; */
+    font-size: 28px;
+}
+.cipher-animation-container{
+    height:400px;
+    width:650px;
+    border: 1px solid #AAAEB3;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pair-animator{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-right: 15px;
+}
+.char-container{
+    height: 100px;
+    width: 100px;
+    border: 1px solid #AAAEB3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    color: #F2C17B;
+    
+}
+
+.output-span-one{
+    
+}

@@ -8,7 +8,7 @@ const Hero = () => {
   return (
 
     <div className='hero'>
-    
+
     <div className='hero-container'>
         <div className='hero-text'>
             <div className="welcome-box">

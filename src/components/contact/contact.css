@@ -1,0 +1,16 @@
+.contact{
+    height: 100vh;
+    width:100vw;
+    background-color: #1f1f1f;
+    position: relative;
+    overflow: hidden;
+}
+.team{
+    font-family: "Silkscreen", sans-serif;
+    color: #F2C17B;
+    font-size: 6vh;
+    line-height: 4vh;
+}
+.members{
+    
+}

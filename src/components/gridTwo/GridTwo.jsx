@@ -10,6 +10,8 @@ export default function GridTwo(props) {
     const [inputTwo, setInputTwo] = useState(-1);
     const [outputOne, setOutputOne] = useState(-1);
     const [outputTwo, setOutputTwo] = useState(-1);
+    const [outputOneBlinking, setOutputOneBlinking] = useState(false);
+    const [outputTwoBlinking, setOutputTwoBlinking] = useState(false);
 
     useEffect(() => {
         // get the coordinates of first letter
@@ -67,9 +69,31 @@ export default function GridTwo(props) {
         setOutputOne(out[0][0] * 5 + out[0][1]);
         setOutputTwo(out[1][0] * 5 + out[1][1]);
 
-        // get the coordinates of the 1st encryption
+        setTimeout(() => {
+            setOutputOneBlinking(true);
+            setTimeout(() => {
+                setOutputOneBlinking(false);
+                setTimeout(() => {
+                    setOutputOneBlinking(true);
+                    setTimeout(() => {
+                        setOutputOneBlinking(false);
+                        setTimeout(() => {
+                            setOutputTwoBlinking(true);
+                            setTimeout(() => {
+                                setOutputTwoBlinking(false);
+                                setTimeout(() => {
+                                    setOutputTwoBlinking(true);
+                                    setTimeout(() => {
+                                        setOutputTwoBlinking(false);
+                                    }, 500);
+                                }, 500);
+                            }, 500);
+                        }, 2000);
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 500);
 
-        // get the coordinates of the 2nd encryption
     }, [props])
 
     const array = cipher.grid.flat()
@@ -84,29 +108,43 @@ export default function GridTwo(props) {
             //         {id} {index}
             //     </div>
 
+            // <div
+            //         key={index}
+            //         className='grid-div'
+            //         style={{
+            //             backgroundColor:
+            //                 inputOne === index
+            //                     ? '#F2C17B'
+            //                     : inputTwo === index
+            //                     ? 'yellow'
+            //                     : outputOne === index
+            //                     ? '#F2C17B'
+            //                     : outputTwo === index
+            //                     ? 'yellow'
+            //                     : children.includes(index)
+            //                     ? 'white'
+            //                     : 'transparent',
+            //             color:
+            //                 inputOne === index ? 'black':
+            //                 inputTwo === index ? 'black':
+            //                 outputOne=== index ? 'black':
+            //                 outputTwo=== index ? 'black':
+            //                 children.includes(index)? 'black':
+            //                 '#AAAEB3'
+            //         }}
+            //     >
+            //         {id}
+            //     </div>
             <div
                     key={index}
-                    className='grid-div'
+                    className={`grid-div ${outputOneBlinking && outputOne === index ? 'blinking-red' : ''} ${outputTwoBlinking && outputTwo === index ? 'blinking-blue' : ''}`}
                     style={{
                         backgroundColor:
-                            inputOne === index
-                                ? '#F2C17B'
-                                : inputTwo === index
-                                ? 'yellow'
-                                : outputOne === index
-                                ? '#F2C17B'
-                                : outputTwo === index
-                                ? 'yellow'
-                                : children.includes(index)
-                                ? 'white'
-                                : 'transparent',
+                            inputOne === index ? '#FFDE59' :
+                            inputTwo === index ? '#FF914D' :
+                            children.includes(index) ? 'white' : 'transparent',
                         color:
-                            inputOne === index ? 'black':
-                            inputTwo === index ? 'black':
-                            outputOne=== index ? 'black':
-                            outputTwo=== index ? 'black':
-                            children.includes(index)? 'black':
-                            '#AAAEB3'
+                            children.includes(index) ? 'black' : '#AAAEB3'
                     }}
                 >
                     {id}

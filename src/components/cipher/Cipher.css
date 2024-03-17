@@ -4,7 +4,7 @@
     /* background-color: antiquewhite; */
     display: flex;
     align-items:center;
-    background-image: url('./../../../public/assets/bg2.jpeg');
+    background-image: url('./../../../public/assets/paper_background.svg');
     background-repeat:no-repeat ;
     background-size: cover;
 }
@@ -35,6 +35,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
 }
 .pair-animator{
     display: grid;

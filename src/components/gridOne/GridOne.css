@@ -12,8 +12,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid #AAAEB3; */
+    border: 1px solid #AAAEB3;
     /* border-radius: 5px; */
     color: #AAAEB3;
     font-size: 24px;
 }
+
+.blinking-red {
+    animation: blink-animation-red 1s infinite alternate;
+}
+
+.blinking-blue {
+    animation: blink-animation-blue 1s infinite alternate;
+}
+
+@keyframes blink-animation-red {
+    from {
+        background-color: #FFDE59;
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+@keyframes blink-animation-blue {
+    from {
+        background-color: #FF914D;
+    }
+    to {
+        background-color: transparent;
+    }
+}
+

@@ -12,6 +12,9 @@ export default function GridOne(props) {
     const [outputOne, setOutputOne] = useState(-1);
     const [outputTwo, setOutputTwo] = useState(-1);
 
+    const [outputOneBlinking, setOutputOneBlinking] = useState(false);
+    const [outputTwoBlinking, setOutputTwoBlinking] = useState(false);
+
     useEffect(() => {
         // get the coordinates of first letter
         let leftBound, rightBound, topBound, bottomBound;
@@ -23,11 +26,6 @@ export default function GridOne(props) {
 
         const { inp, out, text } = cipher.enCords(props.first.toUpperCase() + props.second.toUpperCase())
         // get the coordinates of the 2nd letter
-
-        // let topLeft = [ Math.min(inp[0][0], inp[1][0]), Math.min(inp[0][1], inp[1][1]) ];
-        // let topRight = [ Math.min(inp[0][0], inp[1][0]), Math.max(inp[0][1], inp[1][1]) ];
-        // let bottomLeft = [ Math.max(inp[0][0], inp[1][0]), Math.min(inp[0][1], inp[1][1]) ];
-        // let bottomRight = [ Math.max(inp[0][0], inp[1][0]), Math.max(inp[0][1], inp[1][1]) ];
 
         leftBound = Math.min(inp[0][1], inp[1][1]);
         rightBound = Math.max(inp[0][1], inp[1][1]);
@@ -55,12 +53,6 @@ export default function GridOne(props) {
             }
         }
         setChildren(childArray);
-        // highlight the rectangle
-
-        // let inputOne = inp[0][0]*5 + inp[0][1];
-        // let outputOne = out[0][0]*5 + out[0][1];                
-        // let inputTwo = inp[1][0]*5 + inp[1][1];
-        // let outputTwo = out[1][0]*5 + out[1][1];
 
         // Set indices for inputOne, inputTwo, outputOne, and outputTwo
         setInputOne(inp[0][0] * 5 + inp[0][1]);
@@ -68,10 +60,37 @@ export default function GridOne(props) {
         setOutputOne(out[0][0] * 5 + out[0][1]);
         setOutputTwo(out[1][0] * 5 + out[1][1]);
 
-        // get the coordinates of the 1st encryption
+        // Trigger blinking effect for outputOne and outputTwo
+        setTimeout(() => {
+            setOutputOneBlinking(true);
+            setTimeout(() => {
+                setOutputOneBlinking(false);
+                setTimeout(() => {
+                    setOutputOneBlinking(true);
+                    setTimeout(() => {
+                        setOutputOneBlinking(false);
+                        setTimeout(() => {
+                            setOutputTwoBlinking(true);
+                            setTimeout(() => {
+                                setOutputTwoBlinking(false);
+                                setTimeout(() => {
+                                    setOutputTwoBlinking(true);
+                                    setTimeout(() => {
+                                        setOutputTwoBlinking(false);
+                                    }, 500);
+                                }, 500);
+                            }, 500);
+                        }, 2000);
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, 500);
 
-        // get the coordinates of the 2nd encryption
+
     }, [props])
+
+
+
 
     const array = cipher.grid.flat()
     return (
@@ -80,34 +99,34 @@ export default function GridOne(props) {
             // <div
             //         key={index}
             //         className='grid-div'
-            //         style={{backgroundColor:children.includes(index)? 'white' : 'transparent'}}
+            //         style={{
+            //             backgroundColor:
+            //                 inputOne === index ? '#F2C17B':
+            //                 inputTwo === index ? 'yellow' :
+            //                 children.includes(index)? 'white'
+            //                 : 'transparent',
+            //             color:
+            //                 inputOne === index ? 'black':
+            //                 inputTwo === index ? 'black':
+            //                 outputOne=== index ? 'black':
+            //                 outputTwo=== index ? 'black':
+            //                 children.includes(index)? 'black':
+            //                 '#AAAEB3'
+            //         }}
             //     >
-            //         {id} {index}
+            //         {id}
             //     </div>
 
             <div
                     key={index}
-                    className='grid-div'
+                    className={`grid-div ${outputOneBlinking && outputOne === index ? 'blinking-red' : ''} ${outputTwoBlinking && outputTwo === index ? 'blinking-blue' : ''}`}
                     style={{
                         backgroundColor:
-                            inputOne === index
-                                ? '#F2C17B'
-                                : inputTwo === index
-                                ? 'yellow'
-                                : outputOne === index
-                                ? '#F2C17B'
-                                : outputTwo === index
-                                ? 'yellow'
-                                : children.includes(index)
-                                ? 'white'
-                                : 'transparent',
+                            inputOne === index ? '#FFDE59' :
+                            inputTwo === index ? '#FF914D' :
+                            children.includes(index) ? 'white' : 'transparent',
                         color:
-                            inputOne === index ? 'black':
-                            inputTwo === index ? 'black':
-                            outputOne=== index ? 'black':
-                            outputTwo=== index ? 'black':
-                            children.includes(index)? 'black':
-                            '#AAAEB3'
+                            children.includes(index) ? 'black' : '#AAAEB3'
                     }}
                 >
                     {id}
@@ -116,3 +135,18 @@ export default function GridOne(props) {
     </div>
     )
 }
+
+
+
+                        // backgroundColor:
+                        //     inputOne === index
+                        //         ? '#F2C17B'
+                        //         : inputTwo === index
+                        //         ? 'yellow'
+                        //         : outputOne === index
+                        //         ? '#F2C17B'
+                        //         : outputTwo === index
+                        //         ? 'yellow'
+                        //         : children.includes(index)
+                        //         ? 'white'
+                        //         : 'transparent',

@@ -80,7 +80,7 @@ export default function Cipher(props) {
                 }
             });
 
-        }, 2000); // Increment i and j every 5 seconds
+        }, 7000); // Increment i and j every 5 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -100,7 +100,6 @@ export default function Cipher(props) {
     <div className='cipher'>
         <div className='cipher-container'>    
             <div className='cipher-input-container  text-container'>
-                
                 <span style={{color:'#D2DFF4'}}>{input.substring(0,i)}</span>
                 <span style={{color:'#F2C17B'}}>{input.substring(i,j)}</span>
                 <span style={{color:'#AAAEB3'}}>{input.substring(j)}</span>
@@ -112,8 +111,8 @@ export default function Cipher(props) {
                     second = {two}
                 />
                 <div className='pair-animator'>
-                    <div className='char-container'>{one}</div>
-                    <div className='char-container'>{two}</div>
+                    <div className='char-container' style={{color:'#FFDE59'}}>{one}</div>
+                    <div className='char-container' style={{color:'#FF914D'}}>{two}</div>
                     <div className='char-container' style={{color:'#D2DFF4'}}>
                         <span className='output-span-one'>{oneSol}</span>    
                     </div>
@@ -125,7 +124,7 @@ export default function Cipher(props) {
                     <div className='char-container'>{cipher.enCords(one.toUpperCase() + two.toUpperCase()).text[1].toLowerCase()}</div> */}
                 </div>
             </div>
-            <div className='cipher-output-container text-container' style={{color:'#D2DFF4'}}>{output}</div>
+            <div className='cipher-output-container text-container' style={{color:'#D2DFF4'}}>ENCRYPTED TEXT : {output}</div>
         </div>
     </div>
     )

@@ -82,7 +82,7 @@ export default function Decyrption() {
                 }
             });
 
-        }, 2000); // Increment i and j every 5 seconds
+        }, 7000); // Increment i and j every 5 seconds
 
         return () => clearInterval(interval);
     }, []);
@@ -114,8 +114,8 @@ export default function Decyrption() {
                     second = {two}
                 />
                 <div className='pair-animator'>
-                    <div className='char-container'>{one}</div>
-                    <div className='char-container'>{two}</div>
+                    <div className='char-container' style={{color:'#FFDE59'}}>{one}</div>
+                    <div className='char-container' style={{color:'#FF914D'}}>{two}</div>
                     <div className='char-container' style={{color:'#D2DFF4'}}>
                         <span className='output-span-one'>{oneSol}</span>    
                     </div>

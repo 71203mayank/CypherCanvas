@@ -1,12 +1,23 @@
 import React, {useEffect, useState} from 'react'
 import GridTwo from '../gridTwo/GridTwo';
+import {useLocation } from 'react-router-dom';
+
 import PFCipher from '../pfc';
 
 export default function Decyrption() {
-    const str = "hpbkaqsvqvoteuikabonkgiglhpbsekuniincoqobrhkzmgugpnlunvbpuoghpqmqm";
+
+
+    const location = useLocation();
+    const {
+        keyword,
+        str
+    } = location.state;
+    // const str = "hpbkaqsvqvoteuikabonkgiglhpbsekuniincoqobrhkzmgugpnlunvbpuoghpqmqm"
+    // const str = "hpbkaq"
+
 
     // const str = "coding niggas"
-    const keyword = "playfair";
+    // const keyword = "playfair";
     // const keyword = 'codeinit'
     const cipher = new PFCipher(keyword);
     const [input,setInput] = useState(str)

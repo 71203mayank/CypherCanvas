@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './Game.css'
 import PFCipher from '../pfc';
 import GridThree from '../gridThree/GridThree';
 
@@ -26,15 +27,15 @@ export default function Game() {
     }, []);
 
     return (
-    <div className='cipher'>
-        <div className='cipher-container'>    
+    <div className='game-cipher'>
+        <div className='game-cipher-container'>    
             
-            <div className='cipher-animation-container'>
+            <div className='game-cipher-animation-container'>
                 <GridThree
                     keyword = {key}
                 />
                 
-                <div>
+                <div className='game-question-container'>
                     {
                         words.map((word, index) => (
                             <TestBox
@@ -74,12 +75,14 @@ const TestBox = ({ word, keyword }) => {
     }, [word, keyword]);
 
     return (
-        <div>
-            <label>{word}</label>
-            <input type='text' onChange={e => setIn(e.target.value.toUpperCase())}/>
+        <div className='game-question'>
+            <label className='game-label'>{word}</label>
+            <input className='game-input' type='text' onChange={e => setIn(e.target.value.toUpperCase())}/>
+            <div className='game-tick'>
             {
                 (out === inp)? <label>{validate}</label> : <></>
             }
+            </div>
         </div>
     )
 }

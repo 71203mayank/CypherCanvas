@@ -7,15 +7,15 @@ import OutButton from '../baseButton/OutButton';
 const NavBar = () => {
 return (
     <nav className='navbar sticky top-0 z-50'>
-      <div className='logo-container'>
-        <img src='./assets/logo.svg'></img>
-      </div>
+        <div className='logo-container'>
+          <img src='./assets/logo.svg'></img>
+        </div>
       <div className='nav-buttons'>
-        <div className='nav-button'>Learn</div>
+        <a className='nav-button' href='https://drive.google.com/file/d/1el2mpaV88w2287w87d5XaJdz4A-RLEMH/view?usp=sharing' target="_blank" rel="noopener noreferrer">Learn</a>
         <Link to='/try'><div className='nav-button'>Encrypt</div></Link>
-        <Link to={'/'}><div className='nav-button'>Play</div></Link>
+        <Link to={'/quiz'}><div className='nav-button'>Play</div></Link>
         
-        <div className='nav-button'>Contact</div>
+        <a className='nav-button' href='https://github.com/71203mayank/codeint24' target="_blank" rel="noopener noreferrer">Contribute</a>
       </div>
     </nav>
   );

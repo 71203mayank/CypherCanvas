@@ -13,6 +13,7 @@ function App() {
       <Hero/> 
     </div>
     <div className="App">
+
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Hero/>}/>
@@ -25,6 +26,7 @@ function App() {
       <Form/>
       <Cipher/>
       <Decyrption/> */}
+
     </div>
   );
 }

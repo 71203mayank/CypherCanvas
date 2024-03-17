@@ -6,6 +6,7 @@ import PFCipher from '../pfc';
 
 export default function Decyrption() {
 
+
     const location = useLocation();
     const {
         keyword,
@@ -13,6 +14,7 @@ export default function Decyrption() {
     } = location.state;
     // const str = "hpbkaqsvqvoteuikabonkgiglhpbsekuniincoqobrhkzmgugpnlunvbpuoghpqmqm"
     // const str = "hpbkaq"
+
 
     // const str = "coding niggas"
     // const keyword = "playfair";

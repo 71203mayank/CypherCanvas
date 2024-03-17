@@ -1,5 +1,6 @@
 import React from 'react'
 import './NavBar.css'
+import { Link } from 'react-router-dom';
 import BaseButton from '../baseButton/BaseButton';
 import OutButton from '../baseButton/OutButton';
 
@@ -10,13 +11,10 @@ return (
         <img src='./assets/logo.svg'></img>
       </div>
       <div className='nav-buttons'>
-        {/* <BaseButton name="Learn"/>
-        <BaseButton name=""/>
-        <BaseButton name=""/>
-        <BaseButton name=""/> */}
         <div className='nav-button'>Learn</div>
-        <div className='nav-button'>Encrypt</div>
-        <div className='nav-button'>Play</div>
+        <Link to='/try'><div className='nav-button'>Encrypt</div></Link>
+        <Link to={'/'}><div className='nav-button'>Play</div></Link>
+        
         <div className='nav-button'>Contact</div>
       </div>
     </nav>

@@ -6,6 +6,7 @@
     align-items:center;
     background-image: url('./../../../public/assets/bg2.jpeg');
     background-repeat:no-repeat ;
+    background-size: cover;
 }
 
 .cipher-container{

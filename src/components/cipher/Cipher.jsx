@@ -1,16 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import './Cipher.css'
 import GridOne from '../gridOne/GridOne';
-
+import {useLocation } from 'react-router-dom';
 import PFCipher from '../pfc';
 
 
 export default function Cipher(props) {
     
+    const location = useLocation();
+    const {
+        keyword,
+        str
+    } = location.state;
     // const str = "un"
-    const str = "each who own since want here again keep person right develop new run greath"
+    // const str = "each who own since want here again keep person right develop new run greath"
     // const str = "coding niggas"
-    const keyword = "playfair";
+    // const keyword = "playfair";
     // const keyword = 'codeinit'
     const cipher = new PFCipher(keyword);
     const [input,setInput] = useState(str)
@@ -75,7 +80,7 @@ export default function Cipher(props) {
                 }
             });
 
-        }, 500); // Increment i and j every 5 seconds
+        }, 2000); // Increment i and j every 5 seconds
 
         return () => clearInterval(interval);
     }, []);

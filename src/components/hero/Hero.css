@@ -12,6 +12,9 @@
     overflow: hidden;
 }
 
+/* .hero-container{
+    position: relative;
+} */
 .hero-text{
     position: absolute;
     top:50%;

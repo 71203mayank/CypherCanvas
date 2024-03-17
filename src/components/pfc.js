@@ -68,6 +68,7 @@ class PFCipher {
 			}
 		}
 
+        text = text.toUpperCase();
 		const [ x1, y1 ] = this.letters[text.charCodeAt(0)-65];
 		const [ x2, y2 ] = this.letters[text.charCodeAt(1)-65];
 		

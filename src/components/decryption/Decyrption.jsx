@@ -3,8 +3,7 @@ import GridTwo from '../gridTwo/GridTwo';
 import PFCipher from '../pfc';
 
 export default function Decyrption() {
-    // const str = "hpbkaqsvqvoteuikabonkgiglhpbsekuniincoqobrhkzmgugpnlunvbpuoghpqmqm"
-    const str = "hpbkaq"
+    const str = "hpbkaqsvqvoteuikabonkgiglhpbsekuniincoqobrhkzmgugpnlunvbpuoghpqmqm";
 
     // const str = "coding niggas"
     const keyword = "playfair";

@@ -1,6 +1,5 @@
 {
   "name": "codeinit",
-  "homepage": "https://71203mayank.github.io/CypherCanvas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -17,7 +17,7 @@ const Hero = () => {
             </div>
         </div>
         <div className='hero-img'>
-            <img src='./assets/nigga.svg' alt='nigga' className='hero-img-img'></img>
+            <img src='./assets/nigga.svg' alt='image' className='hero-img-img'></img>
         </div>
     </div>
     <div style={{position:'absolute',top:'0'}}><NavBar/></div>
